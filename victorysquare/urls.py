@@ -21,6 +21,10 @@ from vsquare import views
 
 router = routers.DefaultRouter()
 router.register(r'organizations', views.OrganizationViewSet)
+router.register(r'games', views.GameViewSet)
+router.register(r'items', views.ItemViewSet)
+router.register(r'difficulty', views.DifficultyViewSet)
+router.register(r'category', views.CategoryViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

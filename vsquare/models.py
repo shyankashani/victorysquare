@@ -40,8 +40,8 @@ class Game(models.Model):
     min_age = models.IntegerField(blank=True, null=True)
     thumbnail = models.CharField(max_length=255, blank=True, null=True)
     image = models.CharField(max_length=255, blank=True, null=True)
-    bgg_average_weight = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
-    bgg_average_rating = models.DecimalField(max_digits=65535, decimal_places=65535, blank=True, null=True)
+    bgg_average_weight = models.DecimalField(max_digits=8, decimal_places=6, blank=True, null=True)
+    bgg_average_rating = models.DecimalField(max_digits=8, decimal_places=6, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -54,7 +54,7 @@ class Item(models.Model):
     game = models.ForeignKey(Game, models.DO_NOTHING)
     organization = models.ForeignKey('Organization', models.DO_NOTHING)
     location = models.CharField(max_length=3, blank=True, null=True)
-    color = models.ForeignKey(Difficulty, models.DO_NOTHING, blank=True, null=True)
+    difficulty = models.ForeignKey(Difficulty, models.DO_NOTHING, blank=True, null=True)
     category = models.ForeignKey(Category, models.DO_NOTHING, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     staff_pick = models.NullBooleanField()
