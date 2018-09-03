@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'victorysquare.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgresql-spherical-40013',
+        'NAME': 'd44d7utch7fj0m',
         'USER': 'eakyrenfgrudpz',
         'PASSWORD': '2bec46785c01929a754a5ed574619d5746b4b195ec26b7ea4b06215f64f0b2eb',
         'HOST': 'ec2-23-23-245-89.compute-1.amazonaws.com',
