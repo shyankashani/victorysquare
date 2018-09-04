@@ -2,19 +2,21 @@ from vsquare.models import Organization, Game, Item, Difficulty, Category
 from rest_framework import serializers
 
 
-class OrganizationSerializer(serializers.HyperlinkedModelSerializer):
+class OrganizationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Organization
         fields = (
+        'id',
         'url',
         'name'
     )
 
 
-class GameSerializer(serializers.HyperlinkedModelSerializer):
+class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
         fields = (
+            'id',
             'url',
             'name',
             'bgg_id',
@@ -33,10 +35,11 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
         )
 
 
-class ItemSerializer(serializers.HyperlinkedModelSerializer):
+class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = (
+            'id',
             'url',
             'game',
             'organization',
@@ -48,10 +51,11 @@ class ItemSerializer(serializers.HyperlinkedModelSerializer):
         )
 
 
-class DifficultySerializer(serializers.HyperlinkedModelSerializer):
+class DifficultySerializer(serializers.ModelSerializer):
     class Meta:
         model = Difficulty
         fields = (
+            'id',
             'url',
             'name',
             'description',
@@ -59,10 +63,11 @@ class DifficultySerializer(serializers.HyperlinkedModelSerializer):
         )
 
 
-class CategorySerializer(serializers.HyperlinkedModelSerializer):
+class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = (
+            'id',
             'url',
             'name',
             'image'
