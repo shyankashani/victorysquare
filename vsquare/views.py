@@ -2,32 +2,46 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-
-from vsquare.models import Organization, Game, Item, Difficulty, Category
-from vsquare.serializers import OrganizationSerializer, GameSerializer, ItemSerializer, DifficultySerializer, CategorySerializer
 from rest_framework import viewsets
+from dynamic_rest.viewsets import DynamicModelViewSet
+
+from vsquare.models import (
+    Organization,
+    Game,
+    Item,
+    Difficulty,
+    Category
+)
+
+from vsquare.serializers import (
+    OrganizationSerializer,
+    GameSerializer,
+    ItemSerializer,
+    DifficultySerializer,
+    CategorySerializer
+)
 
 
-class OrganizationViewSet(viewsets.ModelViewSet):
+class OrganizationViewSet(DynamicModelViewSet):
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
 
 
-class GameViewSet(viewsets.ModelViewSet):
+class GameViewSet(DynamicModelViewSet):
     queryset = Game.objects.all()
     serializer_class = GameSerializer
 
 
-class ItemViewSet(viewsets.ModelViewSet):
+class ItemViewSet(DynamicModelViewSet):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
 
 
-class DifficultyViewSet(viewsets.ModelViewSet):
+class DifficultyViewSet(DynamicModelViewSet):
     queryset = Difficulty.objects.all()
     serializer_class = DifficultySerializer
 
 
-class CategoryViewSet(viewsets.ModelViewSet):
+class CategoryViewSet(DynamicModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
