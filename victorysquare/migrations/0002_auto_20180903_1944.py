@@ -8,7 +8,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('vsquare', '0001_initial'),
+        ('victorysquare', '0001_initial'),
     ]
 
     operations = [

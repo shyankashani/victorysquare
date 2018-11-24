@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from rest_framework.routers import DefaultRouter
 from dynamic_rest.routers import DynamicRouter
-from vsquare import viewsets
+from victorysquare import viewsets
 
 router = DynamicRouter()
 router.register(r'organizations', viewsets.OrganizationViewSet)

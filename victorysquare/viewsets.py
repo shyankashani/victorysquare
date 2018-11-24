@@ -2,10 +2,9 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from rest_framework import viewsets
 from dynamic_rest.viewsets import DynamicModelViewSet
 
-from vsquare.models import (
+from victorysquare.models import (
     Organization,
     Game,
     Item,
@@ -13,7 +12,7 @@ from vsquare.models import (
     Category
 )
 
-from vsquare.serializers import (
+from victorysquare.serializers import (
     OrganizationSerializer,
     GameSerializer,
     ItemSerializer,

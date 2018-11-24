@@ -70,9 +70,9 @@ class Migration(migrations.Migration):
                 ('location', models.CharField(blank=True, max_length=3, null=True)),
                 ('notes', models.TextField(blank=True, null=True)),
                 ('staff_pick', models.NullBooleanField()),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='vsquare.Category')),
-                ('color', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='vsquare.Difficulty')),
-                ('game', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='vsquare.Game')),
+                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='victorysquare.Category')),
+                ('color', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='victorysquare.Difficulty')),
+                ('game', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='victorysquare.Game')),
             ],
             options={
                 'db_table': 'inventory',
@@ -117,6 +117,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='item',
             name='organization',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='vsquare.Organization'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='victorysquare.Organization'),
         ),
     ]
