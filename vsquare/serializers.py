@@ -1,8 +1,14 @@
-from rest_framework import serializers
+from rest_framework.serializers import CharField
 
-from dynamic_rest.serializers import (
-    DynamicModelSerializer
+from dynamic_rest.fields import (
+    CountField,
+    DynamicField,
+    DynamicGenericRelationField,
+    DynamicMethodField,
+    DynamicRelationField,
 )
+
+from dynamic_rest.serializers import DynamicModelSerializer
 
 from vsquare.models import (
     Organization,
@@ -13,18 +19,22 @@ from vsquare.models import (
 )
 
 class OrganizationSerializer(DynamicModelSerializer):
+
     class Meta:
         model = Organization
+        name = 'organization'
         fields = (
-        'id',
-        'url',
-        'name'
-    )
+            'id',
+            'url',
+            'name'
+        )
 
 
 class GameSerializer(DynamicModelSerializer):
+
     class Meta:
         model = Game
+        name = 'game'
         fields = (
             'id',
             'url',
@@ -46,8 +56,10 @@ class GameSerializer(DynamicModelSerializer):
 
 
 class ItemSerializer(DynamicModelSerializer):
+
     class Meta:
         model = Item
+        name = 'item'
         fields = (
             'id',
             'url',
@@ -62,8 +74,10 @@ class ItemSerializer(DynamicModelSerializer):
 
 
 class DifficultySerializer(DynamicModelSerializer):
+
     class Meta:
         model = Difficulty
+        name = 'difficulty'
         fields = (
             'id',
             'url',
@@ -74,8 +88,10 @@ class DifficultySerializer(DynamicModelSerializer):
 
 
 class CategorySerializer(DynamicModelSerializer):
+
     class Meta:
         model = Category
+        name = 'category'
         fields = (
             'id',
             'url',

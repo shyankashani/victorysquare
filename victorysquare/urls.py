@@ -1,18 +1,17 @@
-from django.conf.urls import url, include
+from django.conf.urls import include, url
 from django.contrib import admin
 
-from rest_framework import routers
-from vsquare import views
+from rest_framework.routers import DefaultRouter
+from dynamic_rest.routers import DynamicRouter
+from vsquare import viewsets
 
-router = routers.DefaultRouter()
-router.register(r'organizations', views.OrganizationViewSet)
-router.register(r'games', views.GameViewSet)
-router.register(r'items', views.ItemViewSet)
-router.register(r'difficulties', views.DifficultyViewSet)
-router.register(r'categories', views.CategoryViewSet)
+router = DynamicRouter()
+router.register(r'organizations', viewsets.OrganizationViewSet)
+router.register(r'games', viewsets.GameViewSet)
+router.register(r'items', viewsets.ItemViewSet)
+router.register(r'difficulties', viewsets.DifficultyViewSet)
+router.register(r'categories', viewsets.CategoryViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^', include(router.urls))
 ]
