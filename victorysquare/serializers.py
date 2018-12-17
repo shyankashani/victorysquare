@@ -54,10 +54,10 @@ class GameSerializer(DynamicModelSerializer):
 
 
 class ItemSerializer(DynamicModelSerializer):
-    game = DynamicRelationField('GameSerializer', embed=True)
-    organization = DynamicRelationField('OrganizationSerializer', embed=True)
-    difficulty = DynamicRelationField('DifficultySerializer', embed=True)
-    category = DynamicRelationField('CategorySerializer', embed=True)
+    game = DynamicRelationField('GameSerializer')
+    organization = DynamicRelationField('OrganizationSerializer')
+    difficulty = DynamicRelationField('DifficultySerializer')
+    category = DynamicRelationField('CategorySerializer')
 
     class Meta:
         model = Item

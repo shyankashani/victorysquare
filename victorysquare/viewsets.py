@@ -32,7 +32,7 @@ class GameViewSet(DynamicModelViewSet):
 
 
 class ItemViewSet(DynamicModelViewSet):
-    queryset = Item.objects.all()[:5]
+    queryset = Item.objects.all()
     serializer_class = ItemSerializer
 
 
